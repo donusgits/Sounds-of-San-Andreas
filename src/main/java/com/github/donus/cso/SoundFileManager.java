@@ -59,20 +59,21 @@ public abstract class SoundFileManager
 	@SuppressWarnings("ResultOfMethodCallIgnored")
 	public static void ensureSoundDirectoryExists(File soundDirectory)
 	{
-//		if (!soundDirectory.exists())
-//		{
-//			soundDirectory.mkdirs();
-//		}
+		if (!soundDirectory.exists())
+		{
+			soundDirectory.mkdirs();
+		}
+		//don't want custom directories, doing packs instead of modulation for now.
 //		File customDirectory = new File(soundDirectory, "custom");
 //		if (!customDirectory.exists())
 //		{
 //			customDirectory.mkdirs();
 //		}
-//		try
-//		{
-//			soundDirectory.createNewFile();
-//		}
-//		catch (IOException ignored)
+		try
+		{
+			soundDirectory.createNewFile();
+		}
+		catch (IOException ignored)
 		{
 		}
 	}
