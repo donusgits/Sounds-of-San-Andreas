@@ -7,6 +7,8 @@ public enum SoundIds
 	PRAYER_DOWN(2672),
 	REDEMPTION_PROC(2681),
 	BANK_PIN(1041),
+	BANK_EXIT(1042),
+	BANK_ENTER(2274),
 	RUBY_BOLT_PROC(2911);
 
 	public final int Id;

@@ -25,8 +25,8 @@ public interface SOSAConfig extends Config
 
 	@ConfigItem(
 		keyName = "announceHit",
-		name = "",
-		description = "",
+		name = "Getting Hit",
+		description = "Should CJ make painful sounds and grunts when he gets hit?",
 		position = 1
 	)
 	default boolean announceHit()

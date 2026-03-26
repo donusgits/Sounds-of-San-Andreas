@@ -94,6 +94,8 @@ public enum Sound
 	DISMISSING_RANDOM_EVENT_6("dismissrandomevent", "shoo6.wav"),
 
 	TYPING_IN_BANKPIN("typingbankpin", "TypingInBankPin.wav"),
+	BANKPIN_ENTERED("typingbankpin", "TypingInBankPin.wav"),
+	BANKPIN_EXITED("typingbankpin", "TypingInBankPin.wav"),
 
 	TOA_CHEST_OPENS("toachestopens", "ToaChestOpens.wav"),
 

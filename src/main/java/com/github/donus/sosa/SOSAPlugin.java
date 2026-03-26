@@ -148,7 +148,6 @@ public class SOSAPlugin extends Plugin
 		clientThread.invoke(this::setupOldMaps);
 		achievementDiaries.setLastLoginTick(-1);
 		prayerDown.setLastLoginTick(-1);
-		pain.setLastLoginTick(-1);
 		executor.submit(() -> {
 			PlayerKillLineManager.Setup(okHttpClient);
 			SoundFileManager.ensureDownloadDirectoryExists();
@@ -199,14 +198,12 @@ public class SOSAPlugin extends Plugin
 
 				achievementDiaries.setLastLoginTick(-1);
 				prayerDown.setLastLoginTick(-1);
-				pain.setLastLoginTick(-1);
 				collectionLog.setlastColLogSettingWarning();
 				break;
 			case LOGGED_IN:
 				final int currentTick = client.getTickCount();
 				achievementDiaries.setLastLoginTick(currentTick);
 				prayerDown.setLastLoginTick(currentTick);
-				pain.setLastLoginTick(currentTick);
 				break;
 		}
 	}
@@ -223,12 +220,11 @@ public class SOSAPlugin extends Plugin
 		death.onActorDeath(actorDeath);
 	}
 
-//	@Subscribe
-//	public void onGettingHit(HitsplatApplied hitsplatApplied)
-//	{
-//		pain.onGettingHit(hitsplatApplied);
-//	}
-
+	@Subscribe
+	public void onHitsplatApplied(HitsplatApplied hitsplatApplied)
+	{
+		pain.onHitsplatApplied(hitsplatApplied);
+	}
 
 	@Subscribe
 	public void onChatMessage(ChatMessage chatMessage)
@@ -365,7 +361,6 @@ public class SOSAPlugin extends Plugin
 		prayerDown.onGameTick(event);
 		tobChestLight.onGameTick(event);
 		coxSounds.onGameTick(event);
-		pain.onGameTick(event);
 
 		// Should always happen after all tick events
 		cleanupTicks(currentTick);
