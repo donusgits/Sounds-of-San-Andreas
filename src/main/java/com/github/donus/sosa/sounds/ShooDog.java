@@ -19,6 +19,10 @@ import java.util.concurrent.ScheduledExecutorService;
 @Slf4j
 public class ShooDog
 {
+		//This was adapted from Pet Dog from Odablock sounds, which seems to have depended on line 70
+		//pointing to a very specific menu option ID, which basically means I either have to find the
+		//ID for shooing a stray dog, or just nuke this— and I have no idea how to find menu option
+		//IDs. Could be a plugin for that.
 
 	@Inject
 	private Client client;
@@ -67,7 +71,8 @@ public class ShooDog
 
 		// Shooing the dog
 						//wtf does this number mean? Oh well.
-		if (config.shooDog() && menuOptionClicked.getId() == 23766 && option.equals(shooOption))
+//		if (config.shooDog() && menuOptionClicked.getId() == 23766 && option.equals(shooOption))
+		if (config.shooDog() && option.equals(shooOption))
 		{
 			lastShooDogTick = currentTick;
 		}

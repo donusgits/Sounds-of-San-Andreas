@@ -37,7 +37,7 @@ public class KillingPlayer
 	@Inject
 	private ScheduledExecutorService executor;
 
-	private final String message = "Good shit ma brotha don't forget your key!";
+//	private final String message = "";
 
 	private int lmsKills = 0;
 
@@ -89,7 +89,7 @@ public class KillingPlayer
 	{
 		if (config.showChatMessages() && sendMessage)
 		{
-			client.addChatMessage(ChatMessageType.PUBLICCHAT, CJ, message, null);
+//			client.addChatMessage(ChatMessageType.PUBLICCHAT, CJ, message, null);
 		}
 		soundEngine.playClip(Sound.KILLING_SOMEONE_1, executor);
 	}

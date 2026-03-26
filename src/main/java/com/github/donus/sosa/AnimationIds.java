@@ -3,8 +3,7 @@ package com.github.donus.sosa;
 public enum AnimationIds
 {
 	REDEMPTION_PROC(436),
-	DDS_SPEC(252),
-	AGS_SPEC(1211);
+	DDS_SPEC(252);
 
 	public final int Id;
 

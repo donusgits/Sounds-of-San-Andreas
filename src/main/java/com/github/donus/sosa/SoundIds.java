@@ -2,7 +2,6 @@ package com.github.donus.sosa;
 
 public enum SoundIds
 {
-	AGS_SPEC(3869),
 	DDS_SPEC(2537),
 	ACB_SPEC(3892),
 	PRAYER_DOWN(2672),

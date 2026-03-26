@@ -20,6 +20,15 @@ public enum Sound
 
 	SMITED_NO_PRAYER("smited", "SmitedNoPrayer.wav"),
 
+	GETTING_HIT("gettinghurt", "pain1.wav"),
+	GETTING_HIT_2("gettinghurt", "pain2.wav"),
+	GETTING_HIT_3("gettinghurt", "pain3.wav"),
+	GETTING_HIT_4("gettinghurt", "pain4.wav"),
+	GETTING_HIT_5("gettinghurt", "pain5.wav"),
+	GETTING_HIT_6("gettinghurt", "pain6.wav"),
+	GETTING_HIT_7("gettinghurt", "pain7.wav"),
+	GETTING_HIT_8("gettinghurt", "pain8.wav"),
+
 	NEW_PET("newpet", "pet1.wav"),
 	NEW_PET_2("newpet", "pet2.wav"),
 	NEW_PET_3("newpet", "pet3.wav"),
@@ -84,7 +93,7 @@ public enum Sound
 	DISMISSING_RANDOM_EVENT_5("dismissrandomevent", "shoo5.wav"),
 	DISMISSING_RANDOM_EVENT_6("dismissrandomevent", "shoo6.wav"),
 
-	TYPING_IN_BANKPIN("typingbankpin", "TypingInBankpin.wav"),
+	TYPING_IN_BANKPIN("typingbankpin", "TypingInBankPin.wav"),
 
 	TOA_CHEST_OPENS("toachestopens", "ToaChestOpens.wav"),
 

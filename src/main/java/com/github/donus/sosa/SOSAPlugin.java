@@ -58,9 +58,6 @@ public class SOSAPlugin extends Plugin
 	private DdsSpec ddsSpec;
 
 	@Inject
-	private AgsSpec agsSpec;
-
-	@Inject
 	private Death death;
 
 	@Inject
@@ -134,6 +131,9 @@ public class SOSAPlugin extends Plugin
 
 	@Inject
 	private KillingPlayer killingPlayer;
+
+	@Inject
+	private Pain pain;
 	// End of sound injections
 
 	@Inject
@@ -148,6 +148,7 @@ public class SOSAPlugin extends Plugin
 		clientThread.invoke(this::setupOldMaps);
 		achievementDiaries.setLastLoginTick(-1);
 		prayerDown.setLastLoginTick(-1);
+		pain.setLastLoginTick(-1);
 		executor.submit(() -> {
 			PlayerKillLineManager.Setup(okHttpClient);
 			SoundFileManager.ensureDownloadDirectoryExists();
@@ -198,12 +199,14 @@ public class SOSAPlugin extends Plugin
 
 				achievementDiaries.setLastLoginTick(-1);
 				prayerDown.setLastLoginTick(-1);
+				pain.setLastLoginTick(-1);
 				collectionLog.setlastColLogSettingWarning();
 				break;
 			case LOGGED_IN:
 				final int currentTick = client.getTickCount();
 				achievementDiaries.setLastLoginTick(currentTick);
 				prayerDown.setLastLoginTick(currentTick);
+				pain.setLastLoginTick(currentTick);
 				break;
 		}
 	}
@@ -219,6 +222,12 @@ public class SOSAPlugin extends Plugin
 	{
 		death.onActorDeath(actorDeath);
 	}
+
+//	@Subscribe
+//	public void onGettingHit(HitsplatApplied hitsplatApplied)
+//	{
+//		pain.onGettingHit(hitsplatApplied);
+//	}
 
 
 	@Subscribe
@@ -353,10 +362,10 @@ public class SOSAPlugin extends Plugin
 		int currentTick = client.getTickCount();
 
 		ddsSpec.onTick(currentTick, local);
-		agsSpec.onTick(currentTick, local);
 		prayerDown.onGameTick(event);
 		tobChestLight.onGameTick(event);
 		coxSounds.onGameTick(event);
+		pain.onGameTick(event);
 
 		// Should always happen after all tick events
 		cleanupTicks(currentTick);
@@ -364,7 +373,6 @@ public class SOSAPlugin extends Plugin
 
 	private void cleanupTicks(final int currentTick)
 	{
-		agsSpec.cleanupTicks(currentTick);
 		ddsSpec.cleanupTicks(currentTick);
 		shooDog.cleanupTicks(currentTick);
 	}
@@ -373,7 +381,7 @@ public class SOSAPlugin extends Plugin
 	public void onSoundEffectPlayed(SoundEffectPlayed event)
 	{
 		enteringBankPin.onSoundEffectPlayed(event);
-		agsSpec.onSoundEffectPlayed(event);
+		pain.onSoundEffectPlayed(event);
 		ddsSpec.onSoundEffectPlayed(event);
 		prayerDown.onSoundEffectPlayed(event);
 	}

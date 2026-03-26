@@ -14,8 +14,8 @@ public interface SOSAConfig extends Config
 
 	@ConfigItem(
 		keyName = "rubyBoltProc",
-		name = "Ruby Bolt SLAAA",
-		description = "Should the ruby bolt proc be replaced with oda's SLAAA?",
+		name = "Ruby Bolt Rocket Launcher",
+		description = "Should the ruby bolt proc be replaced with a Rocket Launcher firing?",
 		position = 0
 	)
 	default boolean rubyBoltProc()
@@ -24,20 +24,20 @@ public interface SOSAConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "zebakRoar",
-		name = "Zebak Roar",
-		description = "Should the zebak roar be replaced with oda's SLAAA?",
+		keyName = "announceHit",
+		name = "",
+		description = "",
 		position = 1
 	)
-	default boolean zebakRoar()
+	default boolean announceHit()
 	{
 		return true;
 	}
 
 	@ConfigItem(
 		keyName = "vengeance",
-		name = "Vengeance",
-		description = "Should oda's 'Invisivengene' play whenever you cast vengeance?",
+		name = "",
+		description = "",
 		position = 2
 	)
 	default boolean vengeance()
@@ -48,7 +48,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "playerKilling",
 		name = "Player Killing",
-		description = "Should Odablock tell you something when you kill a player? (only works if you're still close to the player when he dies)",
+		description = "Should CJ say something when you kill a player? (only works if you're still close to the player when he dies)",
 		position = 3
 	)
 	default boolean playerKilling()
@@ -59,7 +59,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "onlyForOwnPlayer",
 		name = "Only Own Player",
-		description = "Should Odablock sounds play for your player only? (ags, dds spec ...)",
+		description = "Should sounds play for your player only? (ags, dds spec ...)",
 		position = 4
 	)
 	default boolean ownPlayerOnly()
@@ -69,8 +69,8 @@ public interface SOSAConfig extends Config
 
 	@ConfigItem(
 		keyName = "ddsSpec",
-		name = "DDS Spec",
-		description = "Should Odablock sounds play for your dds spec?",
+		name = "",
+		description = "",
 		position = 5
 	)
 	default boolean ddsSpec()
@@ -80,8 +80,8 @@ public interface SOSAConfig extends Config
 
 	@ConfigItem(
 		keyName = "agsSpec",
-		name = "AGS Spec",
-		description = "Should Odablock sounds play for ags spec?",
+		name = "",
+		description = "",
 		position = 6
 	)
 	default boolean agsSpec()
@@ -92,7 +92,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "acbSpec",
 		name = "ACB Spec",
-		description = "Should Odablock sounds play for acb spec? (only works with soudns on)",
+		description = "Should Odablock sounds play for acb spec? (only works with sounds on)",
 		position = 7
 	)
 	default boolean acbSpec()
@@ -103,7 +103,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "bankPin",
 		name = "Bank Pin",
-		description = "Should Odablock make the 'ai ai ai ai' sound when you type in your bank pin?",
+		description = "Should the game make GTA UI sounds when you type in your bank pin?",
 		position = 8
 	)
 	default boolean bankPin()
@@ -114,7 +114,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "turnOnRun",
 		name = "Turn on run",
-		description = "Should Odablock say 'FAST! I said FAST!' sound when you turn your run on?",
+		description = "Should CJ say something when you turn your run on?",
 		position = 9
 	)
 	default boolean turnOnRun()
@@ -136,7 +136,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "dismissRandomEvent",
 		name = "Dismiss random event",
-		description = "Should Odablock say 'No sanks!' when you dismiss a random event?",
+		description = "Should CJ say something when you dismiss a random event?",
 		position = 11
 	)
 	default boolean dismissRandomEvent()
@@ -147,7 +147,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "declineTrade",
 		name = "Decline Trade",
-		description = "Should Odablock say 'No Sanks!' when you decline a trade?",
+		description = "Should CJ say something when you decline a trade?",
 		position = 12
 	)
 	default boolean declineTrade()
@@ -159,7 +159,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "acceptTrade",
 		name = "Accept Trade",
-		description = "Should Odablock say 'Oda the generous strikes again!' when you accept a trade?",
+		description = "Should CJ say something when you accept a trade?",
 		position = 13
 	)
 	default boolean acceptTrade()
@@ -170,7 +170,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "sendReport",
 		name = "Send Report",
-		description = "Should Odablock say 'Reported for salutations!' when you report someone?",
+		description = "Should CJ cuss them out when you report someone?",
 		position = 14
 	)
 	default boolean sendReport()
@@ -181,7 +181,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceLevelUp",
 		name = "Level ups",
-		description = "Should Odablock announce when you gain a level in a skill?",
+		description = "Should Tweleve (Orange 12) announce when you gain a level in a skill?",
 		position = 15
 	)
 	default boolean announceLevelUp()
@@ -192,7 +192,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceLevelUpIncludesVirtual",
 		name = "Include virtual level ups",
-		description = "Should Odablock announce when you gain a virtual (>99) level in a skill?",
+		description = "Should Tweleve (Orange 12) announce when you gain a virtual (>99) level in a skill?",
 		position = 16
 	)
 	default boolean announceLevelUpIncludesVirtual()
@@ -203,7 +203,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceQuestCompletion",
 		name = "Quest completions",
-		description = "Should Odablock announce when you complete a quest?",
+		description = "Should the Mission Complete jingle play when you complete a quest?",
 		position = 17
 	)
 	default boolean announceQuestCompletion()
@@ -214,7 +214,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "prayerMessage",
 		name = "Prayer Message",
-		description = "Should Odablock let you know when you run out of prayer?",
+		description = "Should CJ let you know when you run out of prayer?",
 		position = 18
 	)
 	default boolean prayerMessage()
@@ -225,7 +225,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "redemptionMessage",
 		name = "Redemption Message",
-		description = "Should Odablock let you know when you proc a redemption?",
+		description = "Should CJ let you know when you proc a redemption?",
 		position = 19
 	)
 	default boolean redemptionMessage()
@@ -236,7 +236,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceCollectionLog",
 		name = "New collection log entry",
-		description = "Should Odablock announce when you fill in a new slot in your collection log? This one relies on you having chat messages (included with the popup option) enabled in game settings!",
+		description = "Should various GTA sounds play when you fill in a new slot in your collection log? This one relies on you having chat messages (included with the popup option) enabled in game settings!",
 		position = 20
 	)
 	default boolean announceCollectionLog()
@@ -247,7 +247,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceAchievementDiary",
 		name = "Completed achievement diaries",
-		description = "Should Odablock announce when you complete a new achievement diary?",
+		description = "Should various GTA sounds play when you complete a new achievement diary?",
 		position = 21
 	)
 	default boolean announceAchievementDiary()
@@ -258,7 +258,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceCombatAchievement",
 		name = "Completed combat achievement tasks",
-		description = "Should Odablock announce when you complete a new combat achievement task?",
+		description = "Should various GTA sounds play when you complete a new combat achievement task?",
 		position = 22
 	)
 	default boolean announceCombatAchievement()
@@ -269,7 +269,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceDeath",
 		name = "When you die",
-		description = "Should Odablock say something when you die?",
+		description = "Should CJ say something when you die?",
 		position = 23
 	)
 	default boolean announceDeath()
