@@ -33,7 +33,7 @@ public class TurnOnRun extends TimedSoundBase
 
 	private boolean isRunning = false;
 
-	private final String message = "FAST! I said FAST!";
+//	private final String message = "";
 	private final String runOption = "Toggle Run";
 
 	TurnOnRun()
@@ -63,7 +63,7 @@ public class TurnOnRun extends TimedSoundBase
 			{
 				if (config.showChatMessages())
 				{
-					client.addChatMessage(ChatMessageType.PUBLICCHAT, CJ, message, null);
+//					client.addChatMessage(ChatMessageType.PUBLICCHAT, CJ, message, null);
 				}
 				soundEngine.playClip(Sound.TURNING_ON_RUN, executor);
 				setLastPlayedTickTick(currentTick);

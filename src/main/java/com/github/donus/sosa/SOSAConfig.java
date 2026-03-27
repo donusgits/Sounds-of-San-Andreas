@@ -12,11 +12,26 @@ public interface SOSAConfig extends Config
 {
 	String CONFIG_GROUP = "sosaplugin";
 
+	@Range(
+			min = 0,
+			max = 200
+	)
+	@ConfigItem(
+			keyName = "announcementVolume",
+			name = "Announcement volume",
+			description = "Adjust how loud the audio announcements are played!",
+			position = 0
+	)
+	default int announcementVolume()
+	{
+		return 100;
+	}
+
 	@ConfigItem(
 		keyName = "rubyBoltProc",
 		name = "Ruby Bolt Rocket Launcher",
 		description = "Should the ruby bolt proc be replaced with a Rocket Launcher firing?",
-		position = 0
+		position = 1
 	)
 	default boolean rubyBoltProc()
 	{
@@ -27,7 +42,7 @@ public interface SOSAConfig extends Config
 		keyName = "announceHit",
 		name = "Getting Hit",
 		description = "Should CJ make painful sounds and grunts when he gets hit?",
-		position = 1
+		position = 2
 	)
 	default boolean announceHit()
 	{
@@ -35,12 +50,12 @@ public interface SOSAConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "vengeance",
-		name = "",
-		description = "",
-		position = 2
+			keyName = "announceDeath",
+			name = "When you die",
+			description = "Should CJ say something when you die?",
+			position = 3
 	)
-	default boolean vengeance()
+	default boolean announceDeath()
 	{
 		return true;
 	}
@@ -49,7 +64,7 @@ public interface SOSAConfig extends Config
 		keyName = "playerKilling",
 		name = "Player Killing",
 		description = "Should CJ say something when you kill a player? (only works if you're still close to the player when he dies)",
-		position = 3
+		position = 4
 	)
 	default boolean playerKilling()
 	{
@@ -57,45 +72,12 @@ public interface SOSAConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "onlyForOwnPlayer",
-		name = "Only Own Player",
-		description = "Should sounds play for your player only? (ags, dds spec ...)",
-		position = 4
+			keyName = "pkChest",
+			name = "PK Chest",
+			description = "Should CJ say something whenever you open the PK chest?",
+			position = 5
 	)
-	default boolean ownPlayerOnly()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "ddsSpec",
-		name = "",
-		description = "",
-		position = 5
-	)
-	default boolean ddsSpec()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "agsSpec",
-		name = "",
-		description = "",
-		position = 6
-	)
-	default boolean agsSpec()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "acbSpec",
-		name = "ACB Spec",
-		description = "Should Odablock sounds play for acb spec? (only works with sounds on)",
-		position = 7
-	)
-	default boolean acbSpec()
+	default boolean pkChest()
 	{
 		return true;
 	}
@@ -104,7 +86,7 @@ public interface SOSAConfig extends Config
 		keyName = "bankPin",
 		name = "Bank Pin",
 		description = "Should the game make GTA UI sounds when you type in your bank pin?",
-		position = 8
+		position = 6
 	)
 	default boolean bankPin()
 	{
@@ -114,8 +96,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "turnOnRun",
 		name = "Turn on run",
-		description = "Should CJ say something when you turn your run on?",
-		position = 9
+		description = "Should Fat CJ say something when you make him run?",
+		position = 7
 	)
 	default boolean turnOnRun()
 	{
@@ -126,7 +108,7 @@ public interface SOSAConfig extends Config
 		keyName = "shooDog",
 		name = "Shoo the Dog",
 		description = "Should CJ say something when you shoo away dogs?",
-		position = 10
+		position = 8
 	)
 	default boolean shooDog()
 	{
@@ -137,7 +119,7 @@ public interface SOSAConfig extends Config
 		keyName = "dismissRandomEvent",
 		name = "Dismiss random event",
 		description = "Should CJ say something when you dismiss a random event?",
-		position = 11
+		position = 9
 	)
 	default boolean dismissRandomEvent()
 	{
@@ -148,7 +130,7 @@ public interface SOSAConfig extends Config
 		keyName = "declineTrade",
 		name = "Decline Trade",
 		description = "Should CJ say something when you decline a trade?",
-		position = 12
+		position = 10
 	)
 	default boolean declineTrade()
 	{
@@ -160,7 +142,7 @@ public interface SOSAConfig extends Config
 		keyName = "acceptTrade",
 		name = "Accept Trade",
 		description = "Should CJ say something when you accept a trade?",
-		position = 13
+		position = 11
 	)
 	default boolean acceptTrade()
 	{
@@ -170,8 +152,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "sendReport",
 		name = "Send Report",
-		description = "Should CJ cuss them out when you report someone?",
-		position = 14
+		description = "Should CJ cuss out the person you report?",
+		position = 12
 	)
 	default boolean sendReport()
 	{
@@ -182,7 +164,7 @@ public interface SOSAConfig extends Config
 		keyName = "announceLevelUp",
 		name = "Level ups",
 		description = "Should Tweleve (Orange 12) announce when you gain a level in a skill?",
-		position = 15
+		position = 13
 	)
 	default boolean announceLevelUp()
 	{
@@ -193,7 +175,7 @@ public interface SOSAConfig extends Config
 		keyName = "announceLevelUpIncludesVirtual",
 		name = "Include virtual level ups",
 		description = "Should Tweleve (Orange 12) announce when you gain a virtual (>99) level in a skill?",
-		position = 16
+		position = 14
 	)
 	default boolean announceLevelUpIncludesVirtual()
 	{
@@ -204,7 +186,7 @@ public interface SOSAConfig extends Config
 		keyName = "announceQuestCompletion",
 		name = "Quest completions",
 		description = "Should the Mission Complete jingle play when you complete a quest?",
-		position = 17
+		position = 15
 	)
 	default boolean announceQuestCompletion()
 	{
@@ -215,7 +197,7 @@ public interface SOSAConfig extends Config
 		keyName = "prayerMessage",
 		name = "Prayer Message",
 		description = "Should CJ let you know when you run out of prayer?",
-		position = 18
+		position = 16
 	)
 	default boolean prayerMessage()
 	{
@@ -225,8 +207,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "redemptionMessage",
 		name = "Redemption Message",
-		description = "Should CJ let you know when you proc a redemption?",
-		position = 19
+		description = "Should CJ let you know when you proc a Redemption?",
+		position = 17
 	)
 	default boolean redemptionMessage()
 	{
@@ -236,8 +218,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceCollectionLog",
 		name = "New collection log entry",
-		description = "Should various GTA sounds play when you fill in a new slot in your collection log? This one relies on you having chat messages (included with the popup option) enabled in game settings!",
-		position = 20
+		description = "Should Tweleve (Orange 12) congratulate you when you fill in a new slot in your collection log? This one relies on you having chat messages (included with the popup option) enabled in game settings!",
+		position = 18
 	)
 	default boolean announceCollectionLog()
 	{
@@ -247,8 +229,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceAchievementDiary",
 		name = "Completed achievement diaries",
-		description = "Should various GTA sounds play when you complete a new achievement diary?",
-		position = 21
+		description = "Should an alternate 'Mission Complete' jingle play when you complete a new achievement diary?",
+		position = 19
 	)
 	default boolean announceAchievementDiary()
 	{
@@ -258,8 +240,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "announceCombatAchievement",
 		name = "Completed combat achievement tasks",
-		description = "Should various GTA sounds play when you complete a new combat achievement task?",
-		position = 22
+		description = "Should an alternate 'Mission Complete' jingle play when you complete a new combat achievement task?",
+		position = 20
 	)
 	default boolean announceCombatAchievement()
 	{
@@ -267,12 +249,12 @@ public interface SOSAConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "announceDeath",
-		name = "When you die",
-		description = "Should CJ say something when you die?",
-		position = 23
+			keyName = "vengeance",
+			name = "Vengeance",
+			description = "Should CJ say something when you cast Vengeance?",
+			position = 21
 	)
-	default boolean announceDeath()
+	default boolean vengeance()
 	{
 		return true;
 	}
@@ -280,47 +262,10 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "showChatMessages",
 		name = "Show fake public chat message (only you will see it)",
-		description = "Should Odablock announce your achievements in game chat as well as audibly?",
-		position = 24
+		description = "Should CJ/Tweleve announce your achievements in game chat as well as audibly?",
+		position = 22
 	)
 	default boolean showChatMessages()
-	{
-		return true;
-	}
-
-	@Range(
-		min = 0,
-		max = 200
-	)
-	@ConfigItem(
-		keyName = "announcementVolume",
-		name = "Announcement volume",
-		description = "Adjust how loud the audio announcements are played!",
-		position = 25
-	)
-	default int announcementVolume()
-	{
-		return 100;
-	}
-
-	@ConfigItem(
-		keyName = "dhAxe",
-		name = "DH/Soulreaper Axe sounds",
-		description = "Should Odablock say something whenever you switch styles on your DH or soulreaper axe?",
-		position = 26
-	)
-	default boolean dhAxe()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "giveBone",
-		name = "Give Bone",
-		description = "Should stella say something whenever you give a bone to a dog?",
-		position = 27
-	)
-	default boolean giveBone()
 	{
 		return true;
 	}
@@ -328,8 +273,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "hairDresser",
 		name = "Hairdresser",
-		description = "Should Odablock say something whenever you open up the hairdresser interface in falador?",
-		position = 28
+		description = "Should Old Reece say something whenever you open up the hairdresser interface in Falador?",
+		position = 23
 	)
 	default boolean hairDresser()
 	{
@@ -338,9 +283,9 @@ public interface SOSAConfig extends Config
 
 	@ConfigItem(
 		keyName = "killingRat",
-		name = "Killing rat (or scurrius)",
-		description = "Should Odablock say something whenever you kill a rat or Scurrius?",
-		position = 29
+		name = "Killing rat (or Scurrius)",
+		description = "Should CJ say something whenever you kill a rat or Scurrius?",
+		position = 24
 	)
 	default boolean killingRat()
 	{
@@ -350,8 +295,8 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "receivedPet",
 		name = "Received pet",
-		description = "Should Odablock say something whenever you receive a pet?",
-		position = 29
+		description = "Should CJ say something whenever you receive a pet?",
+		position = 25
 	)
 	default boolean receivedPet()
 	{
@@ -359,58 +304,12 @@ public interface SOSAConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "pkChest",
-		name = "PK Chest",
-		description = "Should Odablock say something whenever you open the PK chest?",
-		position = 30
+			keyName = "dragonfire",
+			name = "Dragonbreath",
+			description = "Should CJ scream in agony whenever he gets hit with Dragonbreath?",
+			position = 26
 	)
-	default boolean pkChest()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "snowballed",
-		name = "Snowballed",
-		description = "Should Odablock say something whenever you get snowballed by Odablock or one of his mods?",
-		position = 31
-	)
-	default boolean snowballed()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "emotes",
-		name = "Emotes",
-		description = "Configures whether or not some of the text in game gets replaced with Odablock's emotes.<br />type '::odaemotes' in chat to see a list of all available emotes.",
-		position = 32
-	)
-	default boolean emotes()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "emoteIgnoreList",
-		name = "Emote Ignore List",
-		description = "A comma separated list of emotes to ignore for example: \":p, :)\".<br />type '::odaemotes' in chat to see a list of all available emotes.",
-		position = 33
-	)
-	default String emoteIgnoreList()
-	{
-		return "";
-	}
-
-	@ConfigItem(
-		keyName = "warriors",
-		name = "Odablock Warriors",
-		description = "Should the '7th Realm' in-game sound be replaced with the Odablock Warriors song?",
-		position = 34,
-		warning = "If you turn this off, you'll have to reload the client to be able to manually play '7th Realm' again."
-	)
-	default boolean warriors()
-
+	default boolean dragonfire()
 	{
 		return true;
 	}
@@ -425,7 +324,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "toaWhiteChest",
 		name = "TOA White Chest",
-		description = "When enabled, Odablock will say something if you receive a white light.",
+		description = "When enabled, CJ will say something if you receive a white light.",
 		section = TOA_SECTION,
 		position = 101
 	)
@@ -437,23 +336,11 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "toaPurpleChest",
 		name = "TOA Purple Chest",
-		description = "When enabled, Odablock will say something if you receive a purple.",
+		description = "When enabled, CJ will say something if you receive a purple.",
 		section = TOA_SECTION,
 		position = 102
 	)
 	default boolean toaPurpleChest()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "enableToaPurpleChestOpens",
-		name = "Opening The Chest",
-		description = "When enabled, Odablock will say 'Please GAGECK' whenever someone in your party opens the purple chest at TOA.",
-		section = TOA_SECTION,
-		position = 103
-	)
-	default boolean toaPurpleChestOpens()
 	{
 		return true;
 	}
@@ -468,7 +355,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "tobWhiteChest",
 		name = "TOB White chest",
-		description = "Should Odablock say something whenever you receive a white chest at TOB?",
+		description = "Should CJ say something whenever you receive a white chest at TOB?",
 		section = TOB_SECTION,
 		position = 201
 	)
@@ -480,7 +367,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "tobPurpleChest",
 		name = "TOB Purple chest",
-		description = "Should Odablock say something whenever you receive a purple chest at TOB?",
+		description = "Should CJ say something whenever you receive a purple chest at TOB?",
 		section = TOB_SECTION,
 		position = 202
 	)
@@ -499,7 +386,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "coxWhiteChest",
 		name = "COX White chest",
-		description = "Should Odablock say something whenever you get a white light at COX?",
+		description = "Should CJ say something whenever you get a white light at COX?",
 		section = COX_SECTION,
 		position = 301
 	)
@@ -511,7 +398,7 @@ public interface SOSAConfig extends Config
 	@ConfigItem(
 		keyName = "coxPurpleChest",
 		name = "COX Purple chest",
-		description = "Should Odablock say something whenever you get a purple light at COX?",
+		description = "Should CJ say something whenever you get a purple light at COX?",
 		section = COX_SECTION,
 		position = 302
 	)
@@ -521,83 +408,9 @@ public interface SOSAConfig extends Config
 	}
 
 	@ConfigSection(
-		name = "Livestream",
-		description = "All livestream configurations.",
-		position = 400
-	)
-	String LIVESTREAM_SECTION = "livestreamSection";
-
-	@ConfigItem(
-		keyName = "livestream",
-		name = "Livestream Notification",
-		description = "Should Odablock send a message whenever he is live?",
-		section = LIVESTREAM_SECTION,
-		position = 401
-	)
-	default boolean livestream()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "livestreamInterval",
-		name = "Notification Interval",
-		description = "Set the interval of the notification message for livestreams in minutes.",
-		section = LIVESTREAM_SECTION,
-		position = 402
-	)
-	default int livestreamInterval()
-	{
-		return 30;
-	}
-
-	@ConfigItem(
-		keyName = "livestreamColor",
-		name = "Notification Color",
-		description = "Set the color of the notification message for livestreams.",
-		section = LIVESTREAM_SECTION,
-		position = 402
-	)
-	default Color livestreamColor()
-	{
-		return Color.RED;
-	}
-
-	@ConfigSection(
-		name = "Notifications",
-		description = "All notification configurations.",
-		position = 500
-	)
-	String NOTIFICATION_SECTION = "notificationSection";
-
-	@ConfigItem(
-		keyName = "notification",
-		name = "Odablock Notifications",
-		description = "Should Odablock send out notifications?",
-		section = NOTIFICATION_SECTION,
-		position = 501
-	)
-	default boolean notifications()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "notificationColor",
-		name = "Notification Color",
-		description = "Set the color of the notification messages.",
-		section = NOTIFICATION_SECTION,
-		position = 502
-	)
-	default Color notificationColor()
-	{
-		return Color.RED;
-	}
-
-	@ConfigSection(
 		name = "Developer",
 		description = "Developer mode configurations.",
-		position = 600
+		position = 400
 	)
 	String DEVELOPER_SECTION = "developerSection";
 
@@ -606,7 +419,7 @@ public interface SOSAConfig extends Config
 		name = "Developer Logging",
 		description = "Enable developer logging when developer mode is active.",
 		section = DEVELOPER_SECTION,
-		position = 601
+		position = 401
 	)
 	default boolean developerLogging()
 	{

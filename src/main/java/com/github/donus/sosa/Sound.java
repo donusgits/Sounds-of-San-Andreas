@@ -15,8 +15,11 @@ public enum Sound
 	DEATH_5("death", "death5.wav"),
 	DEATH_6("death", "death6.wav"),
 
+	DRAGONFIRE("dragonfire" , "dragonfire1.wav"),
+	DRAGONFIRE_2("dragonfire" , "dragonfire2.wav"),
+	DRAGONFIRE_3("dragonfire" , "dragonfire3.wav"),
+
 	COLLECTION_LOG_SLOT("collectionlog", "clog1.wav"),
-	COLLECTION_LOG_SLOT_2("collectionlog", "clog2.wav"),
 
 	SMITED_NO_PRAYER("smited", "SmitedNoPrayer.wav"),
 
@@ -46,7 +49,10 @@ public enum Sound
 	DECLINE_TRADE_4("declinetrade", "tradedecline.wav"),
 	DECLINE_TRADE_5("declinetrade", "tradedecline.wav"),
 
-	VENGEANCE("vengeance", "Vengeance.wav"),
+	VENGEANCE("vengeance", "Vengeance1.wav"),
+	VENGEANCE_2("vengeance", "Vengeance2.wav"),
+	VENGEANCE_3("vengeance", "Vengeance3.wav"),
+	VENGEANCE_4("vengeance", "Vengeance4.wav"),
 
 	KILLING_SOMEONE_1("playerkilling", "pk1.wav"),
 	KILLING_SOMEONE_2("playerkilling", "pk2.wav"),
@@ -56,14 +62,12 @@ public enum Sound
 	KILLING_SOMEONE_6("playerkilling", "pk6.wav"),
 	KILLING_SOMEONE_7("playerkilling", "pk7.wav"),
 
-
 	REPORT_PLAYER_1("reportplayer", "report1.wav"),
 	REPORT_PLAYER_2("reportplayer", "report2.wav"),
 
-	COMBAT_TASK("combattask", "CombatTaskCompleted_r1.wav"),
-	COMBAT_TASK_2("combattask", "CombatTaskCompleted_r2.wav"),
-	COMBAT_TASK_3("combattask", "CombatTaskCompleted_r3.wav"),
-	COMBAT_TASK_4("combattask", "CombatTaskCompleted_r4.wav"),
+	COMBAT_TASK("quest", "quest1.wav"),
+	ACHIEVEMENT_DIARY("quest", "quest1.wav"),
+	QUEST("quest", "quest2.wav"),
 
 	DDS_SPEC("ddsspec", "DdsSpec_r1.wav"),
 	DDS_SPEC_2("ddsspec", "DdsSpec_r2.wav"),
@@ -83,8 +87,10 @@ public enum Sound
 	GETTING_PURPLE_5("gettingpurple", "purple5.wav"),
 	GETTING_PURPLE_6("gettingpurple", "purple6.wav"),
 
-	KILLING_RAT_OR_SCURRIUS_1("killingrat", "KillingRatOrScurrius_r1.wav"),
-	KILLING_RAT_OR_SCURRIUS_2("killingrat", "KillingRatOrScurrius_r2.wav"),
+	KILLING_RAT_OR_SCURRIUS_1("killingrat", "rat1.wav"),
+	KILLING_RAT_OR_SCURRIUS_2("killingrat", "rat2.wav"),
+	KILLING_RAT_OR_SCURRIUS_3("killingrat", "rat3.wav"),
+	KILLING_RAT_OR_SCURRIUS_4("killingrat", "rat4.wav"),
 
 	DISMISSING_RANDOM_EVENT("dismissrandomevent", "shoo1.wav"),
 	DISMISSING_RANDOM_EVENT_2("dismissrandomevent", "shoo2.wav"),
@@ -94,37 +100,32 @@ public enum Sound
 	DISMISSING_RANDOM_EVENT_6("dismissrandomevent", "shoo6.wav"),
 
 	TYPING_IN_BANKPIN("typingbankpin", "TypingInBankPin.wav"),
-	BANKPIN_ENTERED("typingbankpin", "TypingInBankPin.wav"),
-	BANKPIN_EXITED("typingbankpin", "TypingInBankPin.wav"),
+	BANKPIN_ENTERED("typingbankpin", "EnterBank.wav"),
+	BANKPIN_EXITED("typingbankpin", "ExitBank.wav"),
 
 	TOA_CHEST_OPENS("toachestopens", "ToaChestOpens.wav"),
 
+	ITEMPICKUP("itempickup", "pickup.wav"),
+
 	WHITE_LIGHT_AFTER_RAID("whitelight", "WhiteLightAfterRaid.wav"),
 
-	TURNING_ON_RUN("turningonrun", "TurningOnRun.wav"),
+	TURNING_ON_RUN("turningonrun", "TurningOnRun1.wav"),
+	TURNING_ON_RUN_2("turningonrun", "TurningOnRun2.wav"),
+	TURNING_ON_RUN_3("turningonrun", "TurningOnRun3.wav"),
+	TURNING_ON_RUN_4("turningonrun", "TurningOnRun4.wav"),
 
-	CLICKING_PK_LOOT_CHEST("pkchest", "ClickingPkLootChest.wav"),
+	CLICKING_PK_LOOT_CHEST("pkchest", "ClickingPkLootChest1.wav"),
+	CLICKING_PK_LOOT_CHEST_2("pkchest", "ClickingPkLootChest2.wav"),
+	CLICKING_PK_LOOT_CHEST_3("pkchest", "ClickingPkLootChest3.wav"),
+	CLICKING_PK_LOOT_CHEST_4("pkchest", "ClickingPkLootChest4.wav"),
+	CLICKING_PK_LOOT_CHEST_5("pkchest", "ClickingPkLootChest5.wav"),
 
-	ACB_SPEC("acbspec", "AcbSpec_r1.wav"),
-	ACB_SPEC_2("acbspec", "AcbSpec_r2.wav"),
-	ACB_SPEC_3("acbspec", "AcbSpec_r3.wav"),
-
-	AGS_SPEC("agsspec", "AgsSpec_r1.wav"),
-	AGS_SPEC_2("agsspec", "AgsSpec_r2.wav"),
-	AGS_SPEC_3("agsspec", "AgsSpec_r3.wav"),
+	RUBY_PROC("rubyproc", "RubyProc.wav"),//#13
 
 	LEVEL_UP("levelup", "lvlup.wav"),
 
-	QUEST("quest", "QuestCompleted_r1.wav"),
-
-	ACHIEVEMENT_DIARY("achievementdiary", "AchievementDiary_r1.wav"),
-	ACHIEVEMENT_DIARY_2("achievementdiary", "AchievementDiary_r2.wav"),
-
-	EASTER_EGG_STRAYDOG_BONE("givebone", "GiveBone.wav"),
-
 	HAIRDRESSER_SOUND_1("hairdresser", "Hairdresser_r1.wav"),
-	HAIRDRESSER_SOUND_2("hairdresser", "Hairdresser_r2.wav"),
-	HAIRDRESSER_SOUND_3("hairdresser", "Hairdresser_r3.wav"),;
+	HAIRDRESSER_SOUND_2("hairdresser", "Hairdresser_r2.wav");
 
 	private final String resourceName;
 	private final String directory;

@@ -55,9 +55,6 @@ public class SOSAPlugin extends Plugin
 	private LevelUp levelUp;
 
 	@Inject
-	private DdsSpec ddsSpec;
-
-	@Inject
 	private Death death;
 
 	@Inject
@@ -79,6 +76,9 @@ public class SOSAPlugin extends Plugin
 	private ReportPlayer reportPlayer;
 
 	@Inject
+	private Dragonfire dragonFire;
+
+	@Inject
 	private DeclineTrade declineTrade;
 
 	@Inject
@@ -97,9 +97,6 @@ public class SOSAPlugin extends Plugin
 	private ToaChestLight toaChestLight;
 
 	@Inject
-	private ToaChestOpens toaChestOpens;
-
-	@Inject
 	private TobChestLight tobChestLight;
 
 	@Inject
@@ -115,7 +112,7 @@ public class SOSAPlugin extends Plugin
 	private AchievementDiaries achievementDiaries;
 
 	@Inject
-	private GiveBone giveBone;
+	private RubyBoltProc rubyBoltProc;
 
 	@Inject
 	private HairDresser hairDresser;
@@ -141,6 +138,7 @@ public class SOSAPlugin extends Plugin
 	private boolean developerMode;
 
 	public static final String CJ = "Carl Johnson";
+	public static final String TWELEVE = "Tweleve";
 
 	@Override
 	protected void startUp() throws Exception
@@ -263,10 +261,6 @@ public class SOSAPlugin extends Plugin
 		{
 			return;
 		}
-		else if (giveBone.onChatMessage(chatMessage))
-		{
-			return;
-		}
 		else if (killingPlayer.onChatMessage(chatMessage))
 		{
 			return;
@@ -357,7 +351,6 @@ public class SOSAPlugin extends Plugin
 		final Player local = client.getLocalPlayer();
 		int currentTick = client.getTickCount();
 
-		ddsSpec.onTick(currentTick, local);
 		prayerDown.onGameTick(event);
 		tobChestLight.onGameTick(event);
 		coxSounds.onGameTick(event);
@@ -368,7 +361,6 @@ public class SOSAPlugin extends Plugin
 
 	private void cleanupTicks(final int currentTick)
 	{
-		ddsSpec.cleanupTicks(currentTick);
 		shooDog.cleanupTicks(currentTick);
 	}
 
@@ -376,9 +368,10 @@ public class SOSAPlugin extends Plugin
 	public void onSoundEffectPlayed(SoundEffectPlayed event)
 	{
 		enteringBankPin.onSoundEffectPlayed(event);
+		dragonFire.onSoundEffectPlayed(event);
 		pain.onSoundEffectPlayed(event);
-		ddsSpec.onSoundEffectPlayed(event);
 		prayerDown.onSoundEffectPlayed(event);
+		rubyBoltProc.onSoundEffectPlayed(event);
 	}
 
 	@Subscribe
@@ -390,7 +383,6 @@ public class SOSAPlugin extends Plugin
 	@Subscribe
 	private void onGameObjectSpawned(GameObjectSpawned event)
 	{
-		toaChestOpens.onGameObjectSpawned(event);
 		tobChestLight.onGameObjectSpawned(event);
 	}
 

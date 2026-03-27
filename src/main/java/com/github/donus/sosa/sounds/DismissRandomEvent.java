@@ -41,7 +41,7 @@ public class DismissRandomEvent
 		// Dismiss random event
 		if (config.dismissRandomEvent() && option.equals(optionText) && widgetId != runePouchWidgetId && widgetId != lootingBagWidgetId)
 		{
-			soundEngine.playClip(Sound.DISMISSING_RANDOM_EVENT, executor);
+			soundEngine.playClip(Sound.SHOO_DOG, executor);
 		}
 	}
 }

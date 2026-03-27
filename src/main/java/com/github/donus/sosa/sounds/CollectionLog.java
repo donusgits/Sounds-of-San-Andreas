@@ -1,7 +1,7 @@
 package com.github.donus.sosa.sounds;
 
 import com.github.donus.sosa.SOSAConfig;
-import static com.github.donus.sosa.SOSAPlugin.CJ;
+import static com.github.donus.sosa.SOSAPlugin.TWELEVE;
 import com.github.donus.sosa.Sound;
 import com.github.donus.sosa.SoundEngine;
 import java.util.Set;
@@ -75,7 +75,7 @@ public class CollectionLog
 
 		if (config.showChatMessages())
 		{
-			client.addChatMessage(ChatMessageType.PUBLICCHAT, CJ, "That's mine, now!", null);
+			client.addChatMessage(ChatMessageType.PUBLICCHAT, TWELEVE, "Came up on some nice clothes, boy!", null);
 		}
 		soundEngine.playClip(Sound.COLLECTION_LOG_SLOT, executor);
 		return true;

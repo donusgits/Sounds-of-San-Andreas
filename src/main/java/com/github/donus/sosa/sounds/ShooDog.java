@@ -36,7 +36,7 @@ public class ShooDog
 	@Inject
 	private ScheduledExecutorService executor;
 	private final String shooOption = "Shoo-away";
-	private final String messageByClient = "Thbbbbt!";
+	private final String messageByClient = "thbbbbt!";
 
 	private int lastShooDogTick = -1;
 
@@ -70,9 +70,7 @@ public class ShooDog
 
 
 		// Shooing the dog
-						//wtf does this number mean? Oh well.
-//		if (config.shooDog() && menuOptionClicked.getId() == 23766 && option.equals(shooOption))
-		if (config.shooDog() && option.equals(shooOption))
+		if (config.shooDog() && menuOptionClicked.getId() == 23766 && option.equals(shooOption))
 		{
 			lastShooDogTick = currentTick;
 		}

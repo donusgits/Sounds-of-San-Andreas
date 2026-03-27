@@ -6,6 +6,7 @@ import com.github.donus.sosa.SoundEngine;
 import com.github.donus.sosa.SoundIds;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+import net.runelite.api.Player;
 import net.runelite.api.events.SoundEffectPlayed;
 
 import javax.inject.Inject;
@@ -14,7 +15,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 @Singleton
 @Slf4j
-public class EnteringBankPin
+public class RubyBoltProc
 {
 
 	@Inject
@@ -33,22 +34,13 @@ public class EnteringBankPin
 	{
 		int soundId = event.getSoundId();
 
-		if (config.bankPin())
+		if (config.rubyBoltProc())
 		{
-			if (soundId == SoundIds.BANK_PIN.Id)
+			if (soundId == SoundIds.RUBY_BOLT_PROC.Id)
 			{
 				event.consume();
-				soundEngine.playClip(Sound.TYPING_IN_BANKPIN, executor);
-			}
-			if (soundId == SoundIds.BANK_EXIT.Id)
-			{
-				event.consume();
-				soundEngine.playClip(Sound.BANKPIN_EXITED, executor);
-			}
-			if (soundId == SoundIds.BANK_ENTER.Id)
-			{
-				event.consume();
-				soundEngine.playClip(Sound.BANKPIN_ENTERED, executor);
+				soundEngine.playClip(Sound.RUBY_PROC, executor);
+				return;
 			}
 		}
 	}
